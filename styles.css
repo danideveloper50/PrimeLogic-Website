@@ -30,6 +30,7 @@ body {
     font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
     background: radial-gradient(circle at top left, #f0f3ff 0, #f7f8fc 40%, #f9fbff 100%);
     color: var(--text-main);
+    overflow-x: hidden;
 }
 
 /* Utility */
@@ -1047,6 +1048,11 @@ body {
     }
     .hero {
         padding-top: 80px;
+    }
+    .hero-grid {
+        grid-template-columns: 1fr;   /* single column */
+        padding: 18px 16px 22px;      /* smaller left/right padding */
+        border-radius: 24px;          /* slightly smaller corner so it fits nicely */
     }
     .hero-content h1 {
         font-size: 30px;
