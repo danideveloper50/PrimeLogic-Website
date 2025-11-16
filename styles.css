@@ -1003,74 +1003,146 @@ body {
 }
 
 /* ================= RESPONSIVE ================= */
+
+/* Tablets / small laptops */
 @media (max-width: 992px) {
     .header-inner {
         flex-wrap: wrap;
         justify-content: center;
         gap: 14px;
     }
+
     .nav {
         order: 3;
         flex-wrap: wrap;
         justify-content: center;
     }
+
     .hero-grid {
         grid-template-columns: 1fr;
         padding-top: 20px;
     }
+
     .hero-panel {
         justify-content: flex-start;
     }
-    .trust-inner {
-        flex-direction: column;
-        align-items: flex-start;
-    }
+
     .service-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
+
     .ai-grid {
         grid-template-columns: 1fr;
     }
+
     .testimonial-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
+
     .footer-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 }
 
+/* Large phones / portrait tablets */
+@media (max-width: 768px) {
+
+    /* Hero becomes single column */
+    .hero-grid {
+        grid-template-columns: 1fr !important;   /* force 1 column */
+        padding: 18px 16px 22px;                 /* smaller padding so it fits */
+        border-radius: 24px;
+    }
+
+    /* Stack dark card below text */
+    .hero-panel {
+        margin-top: 22px;
+        justify-content: center;
+    }
+
+    /* Friendlier heading + text */
+    .hero-content h1 {
+        font-size: 28px;
+    }
+
+    .hero-subtitle {
+        font-size: 14px;
+    }
+
+    .hero-stats {
+        gap: 16px;
+    }
+
+    /* 🔹 FIX: hero buttons overflow on mobile */
+    .hero-actions {
+        flex-direction: column;        /* stack buttons */
+        align-items: stretch;
+        gap: 10px;
+        margin-top: 16px;
+    }
+
+    .hero-actions .btn {
+        white-space: normal;           /* allow text to wrap */
+    }
+
+    .hero-actions .btn.primary {
+        width: 100%;                   /* full-width primary button */
+        justify-content: center;
+    }
+
+    .hero-actions .btn.link {
+        padding-left: 0;
+        align-self: flex-start;        /* align "Explore Services" to left */
+    }
+}
+
+/* Normal phones */
 @media (max-width: 640px) {
     .header-inner {
         justify-content: space-between;
     }
+
     .nav {
-        display: none; /* keep header clean on small screens; can be replaced later with mobile menu via JS */
+        display: none; /* will replace with mobile menu later if needed */
     }
+
     .hero {
         padding-top: 80px;
     }
+
+    /* keep hero single column & compact */
     .hero-grid {
-        grid-template-columns: 1fr;   /* single column */
-        padding: 18px 16px 22px;      /* smaller left/right padding */
-        border-radius: 24px;          /* slightly smaller corner so it fits nicely */
+        grid-template-columns: 1fr;
+        padding: 18px 16px 22px;
+        border-radius: 24px;
     }
+
     .hero-content h1 {
-        font-size: 30px;
+        font-size: 26px;
     }
-    .hero-stats {
-        gap: 16px;
-    }
+
     .service-grid {
         grid-template-columns: 1fr;
     }
+
     .testimonial-grid {
         grid-template-columns: 1fr;
     }
+
     .cta-inner {
         flex-direction: column;
         text-align: center;
     }
+
     .footer-grid {
         grid-template-columns: 1fr;
     }
 }
+
+/* Very small phones */
+@media (max-width: 480px) {
+    .hero-grid {
+        padding: 16px 12px 20px;
+    }
+}
+
